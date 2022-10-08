@@ -8,6 +8,8 @@
     "paths": {
       "@modules/*":["./app/modules/*"],
       "@providers/*":["./providers/*"],
+      "@middlewares/*":["./app/middlewares/*"],
+      "@core/*":["./core/*"],
       "@env/*":["./env/*"]
     },
     "lib": ["esnext"],

@@ -6,6 +6,7 @@ import 'reflect-metadata';
 import modules from '@modules/modules';
 
 // orms
+import '@providers/typeorm';
 
 const app = express();
 
