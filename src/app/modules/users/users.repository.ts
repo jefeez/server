@@ -19,6 +19,11 @@ const findOne = async (id: any) => {
   return entity;
 };
 
+const findOneByEmail = async (email: any) => {
+  const entity = await repository.findOne({ where: { email } });
+  return entity;
+};
+
 const update = async (id: any, dto: Partial<IDTOUser>) => {
   const entity = await repository.update({ id }, dto);
   return entity;
@@ -29,4 +34,4 @@ const destroy = async (id: any) => {
   return entity;
 };
 
-export default { findAll, findOne, save, update, destroy };
+export default { findAll, findOne, findOneByEmail, save, update, destroy };

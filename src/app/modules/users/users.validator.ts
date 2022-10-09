@@ -6,6 +6,7 @@ const store = async (request: Request, response: Response, next: NextFunction) =
     const Schema = object({
       avatar: string(),
       username: string().required(),
+      password: string().required(),
       email: string().email().required(),
     });
     const filter = await Schema.validate(request.body);

@@ -1,4 +1,4 @@
-export interface IDTOUser {
+export interface IDTOAuth {
   avatar: string;
   username: string;
   email: string;
