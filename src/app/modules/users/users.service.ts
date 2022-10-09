@@ -3,17 +3,18 @@ import { IDTOUser } from './users.dto';
 
 const index = async () => {
   const entity = await repository.findAll();
-  return entity;
+  return entity.map(user => ({ ...user, password: undefined }));
 };
 
 const store = async (dto: IDTOUser) => {
-  const entity = await repository.save(dto);
-  return entity;
+  const email = dto.email.toLowerCase();
+  const entity = await repository.save({ ...dto, email });
+  return { ...entity, password: undefined };
 };
 
 const show = async (id: any) => {
   const entity = await repository.findOne(id);
-  return entity;
+  return { ...entity, password: undefined };
 };
 
 const update = async (id: any, dto: Partial<IDTOUser>) => {

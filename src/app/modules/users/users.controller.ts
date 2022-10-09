@@ -37,7 +37,7 @@ const update = async (request: Request, response: Response, next: NextFunction) 
     const { id } = request.params;
     const { body } = request;
     const entity = await users.update(id, body);
-    response.status(200).json(entity);
+    response.status(204).json(entity);
   } catch (error) {
     next(error);
   }
