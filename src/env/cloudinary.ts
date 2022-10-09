@@ -1,5 +1,5 @@
 export const configuration = {
-  cloud_name: 'dzwvhysdz',
-  api_key: '354645443217441',
-  api_secret: 'ohKhtlMbzdd6GUh4NAcR7sn_RRs',
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 };

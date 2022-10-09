@@ -1,4 +1,4 @@
 export const jwtEnv = {
-  secret: 'secret',
-  expiresIn: '1d',
+  secret: process.env.JWT_SECRET,
+  expiresIn: process.env.JWT_EXPIREIN,
 };
