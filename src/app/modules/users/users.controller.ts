@@ -1,3 +1,4 @@
+import cloudinary from '@providers/cloudinary';
 import { NextFunction, Request, Response } from 'express';
 import users from './users.service';
 
@@ -13,7 +14,8 @@ const index = async (request: Request, response: Response, next: NextFunction) =
 const store = async (request: Request, response: Response, next: NextFunction) => {
   try {
     const { body } = request;
-    const entity = await users.store(body);
+    const { url: avatar } = await cloudinary(request.file, 'users');
+    const entity = await users.store({ ...body, avatar });
     response.status(200).json(entity);
   } catch (error) {
     next(error);
